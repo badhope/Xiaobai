@@ -17,9 +17,9 @@ export type {
   CourseSubjectRelation,
 } from './types/subject';
 
-// 数据导出
-export { subjectTree } from './content/subjects';
-export { courseLibrary } from './content/courses';
+// 数据导入
+import { subjectTree } from './content/subjects';
+import { courseLibrary } from './content/courses';
 
 // 组合系统
 export const completeSystem = {

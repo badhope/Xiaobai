@@ -110,7 +110,7 @@ export default function CourseDetail() {
                 </h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {relations.subjects.map((subject, index) => (
+                {relations.subjects.map((subject) => (
                   <div
                     key={subject.subcategoryId}
                     className="p-3 bg-gray-50 rounded-lg"

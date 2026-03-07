@@ -515,7 +515,7 @@ export function validateCourseReferences(
       course.prerequisites.forEach((prereqId) => {
         const prereq = system.courseLibrary.index.byId[prereqId];
         if (prereq && prereq.recommendedSemester) {
-          if (prereq.recommendedSemester >= course.recommendedSemester) {
+          if (prereq.recommendedSemester >= (course.recommendedSemester || 0)) {
             warnings.push(
               `课程 [${course.name}] 的先修课程 [${prereq.name}] 推荐学期 (${prereq.recommendedSemester}) 不早于当前课程 (${course.recommendedSemester})`
             );

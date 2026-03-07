@@ -158,12 +158,12 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {categories.map((category, index) => (
+            {categories.map((category, idx) => (
               <motion.div
                 key={category.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: idx * 0.1 }}
               >
                 <Link to={`/subject/${category.id}`} className="block group">
                   <div className="card p-6 hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">

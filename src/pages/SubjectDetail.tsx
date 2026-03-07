@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, Clock, Award } from 'lucide-react';
-import { completeSystem, getCoursesBySubcategory, getCourseById, getSubcategoryStatistics } from '../index';
+import { completeSystem, getCoursesBySubcategory, getSubcategoryStatistics } from '../index';
 
 export default function SubjectDetail() {
   const { id } = useParams<{ id: string }>();
