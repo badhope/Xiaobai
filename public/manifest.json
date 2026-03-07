@@ -1,0 +1,16 @@
+{
+  "name": "Xiaobai",
+  "short_name": "Xiaobai",
+  "description": "学科分类与课程共享系统",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

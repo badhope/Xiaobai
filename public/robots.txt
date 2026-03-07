@@ -1,0 +1,6 @@
+# 搜索引擎爬虫配置
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://xiaobai.example.com/sitemap.xml
