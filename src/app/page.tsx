@@ -2,9 +2,12 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Layers, Share2, TrendingUp } from 'lucide-react';
+import { BookOpen, Layers, Share2, TrendingUp, Star, Clock, Award, GraduationCap } from 'lucide-react';
+import { courses } from '../data/courses';
 
 export default function Home() {
+  const hotCourses = courses.slice(0, 6);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -15,19 +18,19 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
             学科分类与课程共享系统
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             涵盖 14 个学科门类、92 个专业类、150+ 门核心课程的现代化学习平台
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/subjects" className="btn-primary inline-block text-center">
+            <Link href="/subjects" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 inline-block text-center">
               开始探索
             </Link>
             <Link
               href="/search"
-              className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors duration-200 inline-block text-center"
+              className="px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200 inline-block text-center"
             >
               搜索课程
             </Link>
@@ -43,19 +46,22 @@ export default function Home() {
             { icon: BookOpen, label: '专业类', value: '92' },
             { icon: Share2, label: '核心课程', value: '150+' },
             { icon: TrendingUp, label: '学习时长', value: '8000+h' },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="card text-center p-4"
-            >
-              <stat.icon className="w-10 h-10 mx-auto mb-3 text-primary-600" />
-              <div className="text-2xl font-bold mb-1">{stat.value}</div>
-              <div className="text-gray-600 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
+          ].map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 text-center"
+              >
+                <Icon className="w-10 h-10 mx-auto mb-3 text-blue-600" />
+                <div className="text-2xl font-bold mb-1">{stat.value}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
@@ -79,49 +85,144 @@ export default function Home() {
               description: '基于先修关系和推荐学期，为学生提供科学的学习顺序建议',
               icon: TrendingUp,
             },
-          ].map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="card p-6"
-            >
-              <feature.icon className="w-12 h-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
+          ].map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              >
+                <Icon className="w-12 h-12 text-blue-600 mb-4" />
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Subject Categories Preview */}
+      {/* Hot Courses Section */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">学科门类预览</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">热门课程推荐</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { code: '01', name: '哲学', count: 2 },
-            { code: '02', name: '经济学', count: 3 },
-            { code: '07', name: '理学', count: 5 },
-            { code: '08', name: '工学', count: 6 },
-            { code: '12', name: '管理学', count: 4 },
-            { code: '14', name: '交叉学科', count: 4 },
-          ].map((category) => (
-            <Link
-              key={category.code}
-              href={`/subjects`}
-              className="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
+          {hotCourses.map((course, index) => (
+            <motion.div
+              key={course.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-2xl font-bold">{category.name}</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full">
-                  {category.count}个专业类
-                </span>
+              <Link href={`/course/${course.id}`} className="block">
+                <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                        {course.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm line-clamp-2">
+                        {course.description}
+                      </p>
+                    </div>
+                    <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 ml-3" />
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      {course.difficulty && (
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            course.difficulty === 'beginner'
+                              ? 'bg-green-100 text-green-700'
+                              : course.difficulty === 'intermediate'
+                              ? 'bg-yellow-100 text-yellow-700'
+                              : 'bg-red-100 text-red-700'
+                          }`}
+                        >
+                          {course.difficulty === 'beginner'
+                            ? '入门'
+                            : course.difficulty === 'intermediate'
+                            ? '进阶'
+                            : '高级'}
+                        </span>
+                      )}
+                      {course.credits && (
+                        <span className="flex items-center text-gray-500 text-xs">
+                          <Award className="w-3 h-3 mr-1" />
+                          {course.credits} 学分
+                        </span>
+                      )}
+                    </div>
+                    {course.estimatedHours && (
+                      <span className="flex items-center text-gray-500 text-xs">
+                        <Clock className="w-3 h-3 mr-1" />
+                        {course.estimatedHours}h
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link
+            href="/search"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            查看更多课程
+            <TrendingUp className="w-5 h-5 ml-2" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Learning Paths Section */}
+      <section className="container mx-auto px-4 py-16 bg-gray-100">
+        <h2 className="text-3xl font-bold text-center mb-12">推荐学习路径</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              title: '计算机科学入门路径',
+              description: '从零基础开始学习编程，掌握核心计算机知识',
+              courses: ['计算机导论', 'C 语言程序设计', '数据结构', '算法设计'],
+              color: 'blue',
+            },
+            {
+              title: '人工智能学习路径',
+              description: '深入学习机器学习和深度学习，掌握 AI 核心技术',
+              courses: ['数学基础', 'Python 编程', '机器学习', '深度学习'],
+              color: 'purple',
+            },
+          ].map((path, index) => (
+            <motion.div
+              key={path.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="bg-white rounded-xl shadow-md p-8"
+            >
+              <div className="flex items-center mb-4">
+                <GraduationCap className={`w-8 h-8 mr-3 ${path.color === 'blue' ? 'text-blue-600' : 'text-purple-600'}`} />
+                <h3 className="text-xl font-bold text-gray-900">{path.title}</h3>
               </div>
-              <p className="text-gray-600 text-sm">
-                代码：{category.code}
-              </p>
-            </Link>
+              <p className="text-gray-600 mb-6">{path.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {path.courses.map((course) => (
+                  <span
+                    key={course}
+                    className={`px-3 py-1 rounded-full text-sm ${
+                      path.color === 'blue'
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-purple-100 text-purple-700'
+                    }`}
+                  >
+                    {course}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
