@@ -1,4 +1,4 @@
-# Xiaobai - 学科分类与课程共享系统 v2.0
+# Xiaobai - 小白编程学习资源平台
 
 <div align="center">
 
@@ -7,9 +7,9 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**基于 Next.js 14 重构的现代化教育平台**
+**从零开始的编程学习路径，包含前端开发、后端开发、数据库管理等完整教程**
 
-[特性](#-核心特性) • [快速开始](#-快速开始) • [项目结构](#-项目结构) • [文档](#-文档)
+[项目规划](#-项目整体规划) • [已完成内容](#-已完成内容) • [学习路径](#-学习路径规划) • [技术要求](#-技术要求与特色)
 
 </div>
 
@@ -17,378 +17,279 @@
 
 ## 📚 项目简介
 
-学科分类与课程共享系统是一个**全面覆盖中国高等教育专业目录**的现代化教育平台。系统采用**课程与专业分离**的设计，支持**课程共享机制**，同一门课程可以被多个专业引用，避免重复维护，提高资源利用效率。
+小白编程学习资源平台是一个**全面覆盖编程学习路径**的现代化教育平台。平台采用**模块化设计**，提供从基础到高级的完整编程学习内容，类似"菜鸟编程"但更加系统和深入。
 
-### 🎯 目标用户
-- **在校大学生**：了解专业课程设置，规划学习路径
-- **教师**：参考其他院校课程安排，优化教学设计
-- **教育管理者**：分析专业间课程关联，优化资源配置
-- **自学者**：系统学习某个专业的核心课程
+### 🎯 项目目标
+- **通俗易懂**：使用生活化比喻解释编程概念，避免专业术语堆砌
+- **循序渐进**：从基础概念开始，逐步深入复杂内容
+- **实战导向**：每个模块都有完整的实践项目
+- **多设备适配**：精美的响应式界面，丰富的动画效果
 
-## ✨ 核心特性
+## 🎯 项目整体规划
 
-### 1. 全面学科覆盖 🌐
-基于**2023 年版中国高等教育专业目录**，覆盖：
-- **14** 个学科门类
-- **92** 个专业类
-- **150+** 门核心课程
-- **8000+** 小时学习时长
+### 用户原始要求总结
 
-**涵盖学科**:
-哲学 • 经济学 • 法学 • 教育学 • 文学 • 历史学 • 理学 • 工学 • 农学 • 医学 • 管理学 • 艺术学 • **交叉学科**
+**内容创作要求**：
+1. **语言风格**：使用通俗易懂的语言，避免专业术语堆砌
+2. **结构安排**：循序渐进，从基础到复杂，确保知识点逻辑衔接
+3. **教学方法**：大量运用生活比喻，将抽象概念转化为熟悉事物
+4. **连贯性**：规划完整的题目体系，从基础到进阶
+5. **质量标准**：内容准确，语言简洁，比喻恰当，逻辑清晰
 
-### 2. 课程共享机制 🔄
-- **独立课程库**：所有课程存储在独立的课程库中
-- **引用而非复制**：专业通过课程 ID 引用课程
-- **自动关联**：点击课程即可查看被哪些专业共享
-- **版本管理**：支持课程版本更新和追踪
-- **数据一致性**：课程更新后，所有引用的专业自动同步
+**技术实现要求**：
+1. **分类隔离**：各编程语言内容分类存放，互不干扰
+2. **界面精美**：简洁美观，内容间距合理，图案丰富
+3. **动画丰富**：引用开源库实现丰富动画效果
+4. **模块化开发**：一个模块一个模块详细编写，确保深度
+5. **工具介绍**：包含各种开发工具和环境配置介绍
 
-### 3. 现代化技术栈 🚀
-- **Next.js 14 App Router** - 服务端渲染 + 静态生成
-- **TypeScript 5** - 完全类型安全
-- **Tailwind CSS 3** - 原子化 CSS
-- **Framer Motion 10** - 流畅动画
-- **SEO 友好** - 内置优化
+### 学习模块规划
 
-### 4. 科学学习路径 �
-- **先修关系网络**：清晰的课程依赖关系
-- **推荐学期**：基于难度和先修关系的学期安排
-- **难度分级**：入门/中级/高级
-- **学分认证**：统一学分标准
+#### 1. 前端开发模块（当前重点） ✅ 37.5%完成
+- **HTML5与语义化** ✅ 已完成
+- **CSS3基础与布局** ✅ 已完成  
+- **响应式设计** ✅ 已完成
+- **JavaScript入门** 🔄 进行中
+- **JavaScript进阶** ⏳ 待完成
+- **现代前端框架** ⏳ 待完成
+- **前端工程化** ⏳ 待完成
+- **性能优化与最佳实践** ⏳ 待完成
 
-### 5. 沉浸式用户体验 🎨
-- **卡片式设计**：清晰的信息层级
-- **流畅动画**：自然的交互反馈
-- **响应式布局**：完美适配各种设备
-- **暗黑模式**：护眼阅读体验
+#### 2. 后端开发模块 ⏳ 待开始
+- **服务器基础**
+- **API设计**
+- **微服务架构**
+- **认证授权**
+- **性能优化**
 
-## 📊 数据统计
+#### 3. 数据库管理模块 ⏳ 待开始
+- **关系型数据库**
+- **NoSQL数据库**
+- **数据建模**
+- **SQL优化**
+
+#### 4. 开发工具模块 ⏳ 待开始
+- **版本控制**
+- **构建工具**
+- **容器化**
+- **环境配置**
+
+## ✅ 已完成内容
+
+### 前端开发模块（3/8章完成）
+
+#### 第1章：[HTML5与语义化](src/content/learning-path/frontend/01-html5-semantic.md)
+- **语义化标签详解**：header、nav、main、article、section等
+- **可访问性优化**：ARIA属性、键盘导航、屏幕阅读器支持
+- **SEO最佳实践**：meta标签、结构化数据、语义化结构
+- **实战项目**：完整的个人博客页面（770+行代码）
+
+#### 第2章：[CSS3基础与布局](src/content/learning-path/frontend/02-css-basics.md)
+- **选择器系统**：基础选择器、组合选择器、伪类伪元素
+- **盒模型详解**：content-box vs border-box、margin collapsing
+- **布局系统**：Flexbox弹性布局、Grid网格布局
+- **动画与过渡**：transform、transition、animation
+- **实战项目**：为博客页面添加精美样式（1100+行CSS代码）
+
+#### 第3章：[响应式设计](src/content/learning-path/frontend/03-responsive-design.md)
+- **移动优先设计**：从小屏幕开始设计，逐步增强
+- **媒体查询详解**：类型、特性、逻辑操作符
+- **流体网格系统**：相对单位、弹性布局、自适应设计
+- **移动端优化**：触摸交互、视口配置、性能考虑
+- **实战项目**：完整的响应式电商网站
+
+### 基础模块
+
+#### [编程思维基础](src/content/learning-path/foundation/01-programming-thinking.md)
+- **问题分解**：大问题拆解为小问题的方法
+- **模式识别**：发现和利用重复模式
+- **抽象思维**：忽略细节关注本质
+- **算法设计**：步骤化解决问题的思路
+
+### UI/UX设计
+
+#### [开源UI库集成](src/content/learning-path/ui-libraries.md)
+- **CSS框架**：Tailwind CSS、Bootstrap、Bulma
+- **组件库**：Ant Design、Material-UI、Element Plus
+- **动画库**：Animate.css、AOS、GSAP
+- **图标库**：Font Awesome、Material Icons、Feather Icons
+
+## 📚 学习路径规划
+
+### 前端开发学习路径（8章完整体系）
+
+#### 第一阶段：基础技能（1-3章）✅ 已完成
+**目标**：掌握前端三剑客（HTML、CSS、JavaScript）的基础知识
+
+1. **HTML5与语义化** ✅
+2. **CSS3基础与布局** ✅  
+3. **响应式设计** ✅
+
+#### 第二阶段：JavaScript核心（4-5章）🔄 进行中
+**目标**：掌握JavaScript编程和DOM操作
+
+4. **JavaScript入门** 🔄
+5. **JavaScript进阶** ⏳
+
+#### 第三阶段：现代框架（6-7章）⏳ 待开始
+**目标**：学习现代前端开发工具和框架
+
+6. **现代前端框架** ⏳
+7. **前端工程化** ⏳
+
+#### 第四阶段：高级技能（8章）⏳ 待开始
+**目标**：掌握性能优化和最佳实践
+
+8. **性能优化与最佳实践** ⏳
+
+### 学习时间规划
+- **基础阶段**：1-2个月
+- **进阶阶段**：2-3个月  
+- **高级阶段**：1-2个月
+- **完整路径**：4-7个月
+
+## 🎨 技术要求与特色
+
+### 界面设计要求 ✅ 已实现
+- **简洁美观**：内容间距合理，视觉层次清晰
+- **响应式设计**：适配各种设备屏幕尺寸
+- **丰富动画**：使用CSS3和JavaScript实现平滑过渡
+- **主题系统**：支持明暗主题切换
+
+### 技术特色 ✅ 已实现
+- **渐进式学习**：难度逐步增加，避免跳跃
+- **项目驱动**：每章都有完整的实践项目
+- **最佳实践**：遵循行业标准和规范
+- **错误处理**：包含常见错误和避免方法
+
+### 开源库集成 ✅ 已实现
+- **CSS框架**：Tailwind CSS原子化样式
+- **动画效果**：自定义CSS动画和JavaScript交互
+- **图标系统**：使用SVG图标和字体图标
+- **响应式工具**：媒体查询和弹性布局
+
+## 🛠️ 技术栈
+
+### 前端技术
+- **框架**：Next.js 14 (App Router)
+- **语言**：TypeScript 5
+- **样式**：Tailwind CSS 3
+- **动画**：CSS3 + 自定义JavaScript
+
+### 开发工具
+- **构建工具**：Vite (开发环境)
+- **包管理**：npm / yarn
+- **版本控制**：Git
+- **代码质量**：ESLint + Prettier
+
+## 📁 项目结构
 
 ```
-┌─────────────────────────────────────┐
-│  学科门类：14 个                    │
-│  专业类：92 个                      │
-│  核心课程：150+ 门                  │
-│  总学时：8000+ 小时                 │
-│  总学分：500+ 学分                  │
-│  共享课程：80+ 门                   │
-│  独有课程：70+ 门                   │
-└─────────────────────────────────────┘
+src/
+├── content/                    # 学习内容
+│   ├── learning-path/         # 学习路径
+│   │   ├── frontend/          # 前端开发模块 ✅ 37.5%
+│   │   ├── backend/           # 后端开发模块 ⏳
+│   │   ├── database/          # 数据库模块 ⏳
+│   │   └── foundation/        # 基础模块 ✅
+│   └── articles/              # 分类文章
+├── styles/                    # 样式文件
+│   └── global.css            # 全局样式 ✅
+├── scripts/                   # 脚本文件
+│   └── animations.js         # 动画效果 ✅
+└── components/               # React组件
 ```
 
 ## 🚀 快速开始
 
 ### 环境要求
 - Node.js 18+ 
-- npm 或 yarn
+- npm 8+ 或 yarn 1.22+
 
 ### 安装依赖
 ```bash
 npm install
+# 或
+yarn install
 ```
 
-### 启动开发服务器
+### 开发模式
 ```bash
 npm run dev
+# 或
+yarn dev
 ```
-
-访问 [http://localhost:3000](http://localhost:3000)
 
 ### 构建生产版本
 ```bash
 npm run build
-npm run start
+# 或
+yarn build
 ```
 
-## 📁 项目结构
+## 📈 项目进展
 
-```
-Xiaobai/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── layout.tsx         # 根布局
-│   │   ├── page.tsx           # 主页
-│   │   ├── globals.css        # 全局样式
-│   │   └── [routes]/          # 页面路由
-│   │
-│   ├── data/                   # 数据层
-│   │   ├── subjects.ts        # 学科分类数据
-│   │   └── courses.ts         # 课程数据
-│   │
-│   ├── features/               # 功能模块（按功能域组织）
-│   │   ├── subjects/          # 学科相关
-│   │   ├── courses/           # 课程相关
-│   │   └── search/            # 搜索相关
-│   │
-│   ├── lib/                    # 工具函数（模块化）
-│   │   ├── category-utils.ts  # 分类工具
-│   │   └── course-utils.ts    # 课程工具
-│   │
-│   └── types/                  # 类型定义
-│       └── index.ts           # TypeScript 类型
-│
-├── public/                     # 静态资源
-├── next.config.js             # Next.js 配置
-├── tailwind.config.ts         # Tailwind 配置
-├── tsconfig.json              # TypeScript 配置
-└── package.json               # 项目依赖
-```
+### 当前状态
+- **前端开发模块**：37.5%完成（3/8章）
+- **基础模块**：100%完成（1/1章）
+- **UI/UX设计**：100%完成
+- **整体进度**：约25%完成
 
-## 🎓 数据结构设计
+### 近期计划
+1. **完成前端开发模块**（优先级最高）
+   - JavaScript入门（进行中）
+   - JavaScript进阶
+   - 现代前端框架
+   - 前端工程化
+   - 性能优化
 
-### 核心概念
-
-#### Course（课程）
-```typescript
-interface Course {
-  id: string;                  // 课程唯一标识
-  code: string;                // 课程代码
-  name: string;                // 课程名称
-  description: string;         // 详细描述
-  summary?: string;            // 简介
-  estimatedHours: number;      // 学时
-  credits: number;             // 学分
-  prerequisites?: string[];    // 先修课程 ID
-  corequisites?: string[];     // 同修课程
-  recommendedSemester?: 1|2|3|4|5|6|7|8;
-  difficulty?: 'beginner'|'intermediate'|'advanced';
-  tags: string[];              // 标签
-  categories: string[];        // 所属领域
-  version?: string;            // 版本号
-  lastUpdated?: string;        // 最后更新
-}
-```
-
-#### SubjectCategory（学科门类）
-```typescript
-interface SubjectCategory {
-  id: string;                  // 门类 ID（如 '08'）
-  name: string;                // 门类名称（如 '工学'）
-  description: string;         // 描述
-  metadata: {
-    code?: string;             // 专业目录代码
-    level: number;             // 层级（1=门类）
-    parent?: string;           // 父级 ID
-  };
-  children?: SubjectSubcategory[];
-}
-```
-
-#### SubjectSubcategory（专业类）
-```typescript
-interface SubjectSubcategory {
-  id: string;                  // 专业类 ID（如 '0809'）
-  name: string;                // 专业类名称（如 '计算机类'）
-  description: string;         // 描述
-  metadata: {
-    code?: string;             // 专业目录代码
-    level: number;             // 层级（2=专业类）
-    parent?: string;           // 父级 ID
-  };
-  courseIds: string[];         // 引用的课程 ID 列表
-}
-```
-
-## 🛠️ 工具函数
-
-### 学科分类查询
-```typescript
-import { getAllCategories, getCategoryById } from '@/lib/category-utils';
-
-// 获取所有门类
-const categories = getAllCategories(subjectTree);
-
-// 根据 ID 获取
-const category = getCategoryById(subjectTree, '08');
-```
-
-### 课程查询
-```typescript
-import { getCourseById, searchCourses } from '@/lib/course-utils';
-
-// 获取课程
-const course = getCourseById(courseLibrary, 'CS101');
-
-// 搜索课程
-const results = searchCourses(courseLibrary, '人工智能');
-```
-
-### 课程共享查询
-```typescript
-// 获取课程被哪些专业引用
-const relations = getCourseRelations(system, 'CS103');
-console.log(`数据结构被 ${relations.subjects.length} 个专业引用`);
-
-// 获取所有共享课程
-const shared = getSharedCourses(system, 2); // 至少被 2 个专业引用
-
-// 获取专业的独有课程
-const exclusive = getExclusiveCourses(system, '080901');
-```
-
-## � 使用示例
-
-### 示例 1：查看课程共享情况
-```typescript
-import { getCourseRelations } from '@/lib/course-utils';
-
-const relations = getCourseRelations(system, 'CS103');
-console.log(`${relations.courseName} 被以下专业引用:`);
-relations.subjects.forEach(subj => {
-  console.log(`  - ${subj.categoryName} > ${subj.subcategoryName}`);
-});
-```
-
-**输出:**
-```
-数据结构 被以下专业引用:
-  - 工学 > 计算机类
-  - 工学 > 电子信息类
-  - 理学 > 数学类
-```
-
-### 示例 2：获取专业所有课程
-```typescript
-import { getCoursesBySubcategory } from '@/lib/course-utils';
-
-const courses = getCoursesBySubcategory(system, '080901');
-console.log('计算机科学与技术专业课程:');
-courses.forEach(course => {
-  console.log(`  ${course.name} (${course.credits}学分，${course.difficulty})`);
-});
-```
-
-### 示例 3：搜索功能
-```typescript
-import { searchAll } from '@/lib/search-utils';
-
-const results = searchAll(system, '机器学习');
-results.forEach(result => {
-  console.log(`[${result.type}] ${result.data.name}`);
-});
-```
-
-## 🎯 课程共享的优势
-
-### 1. 数据一致性 ✅
-- 课程内容只在一处维护
-- 修改后所有引用的专业自动更新
-- 避免数据冗余和不一致
-
-### 2. 灵活扩展 🔧
-- 新增专业时直接引用现有课程
-- 新增课程后添加到相关专业的 courseIds
-- 无需复制课程数据
-
-### 3. 高效查询 ⚡
-- 通过索引快速查找课程
-- 查询课程被哪些专业引用
-- 统计共享课程和独有课程
-
-### 4. 清晰关联 🔗
-- 明确展示课程与专业的关系
-- 支持跨专业对比
-- 便于学生选课和规划
-
-## 📝 扩展指南
-
-### 添加新课程
-
-1. 在 `src/data/courses.ts` 中添加课程数据:
-```typescript
-{
-  id: 'CS111',
-  code: 'CS111',
-  name: '量子计算导论',
-  description: '量子计算基础理论和算法',
-  estimatedHours: 48,
-  credits: 3,
-  recommendedSemester: 6,
-  difficulty: 'advanced',
-  tags: ['量子计算', '前沿', '物理'],
-  categories: ['计算机', '物理'],
-  version: '2024.1',
-}
-```
-
-2. 在相关专业的 `courseIds` 中添加课程 ID。
-
-### 添加新专业类
-
-1. 在 `src/data/subjects.ts` 中添加专业类:
-```typescript
-{
-  id: '1405',
-  name: '量子信息科学类',
-  description: '量子信息和量子计算',
-  metadata: { code: '1405', level: 2, parent: '14' },
-  courseIds: ['CS111', 'PHYS111'],
-}
-```
-
-## 📖 文档
-
-- [重构报告](./REFACTOR_REPORT.md) - 详细重构过程和技术决策
-- [重构总结](./REFACTOR_SUMMARY.md) - 快速了解重构成果
-- [构建指南](./BUILD_GUIDE.md) - 构建和部署指南
-- [测试计划](./TESTING_PLAN.md) - 功能测试计划
-
-## � 开发命令
-
-```bash
-# 开发
-npm run dev
-
-# 构建
-npm run build
-
-# 生产启动
-npm run start
-
-# 代码检查
-npm run lint
-```
-
-## 🌟 后续计划
-
-### 近期 (本周)
-- [ ] 学科列表页面
-- [ ] 课程详情页面
-- [ ] 搜索功能实现
-- [ ] 错误处理优化
-
-### 中期 (本月)
-- [ ] 用户认证系统
-- [ ] 学习进度跟踪
-- [ ] 课程评价系统
-- [ ] 移动端优化
-
-### 长期 (下季度)
-- [ ] PWA 支持
-- [ ] 离线功能
-- [ ] 国际化 (i18n)
-- [ ] 数据分析平台
+2. **扩展其他模块**
+   - 后端开发模块
+   - 数据库管理模块
+   - 开发工具模块
 
 ## 🤝 贡献指南
 
-欢迎提交 Issue 和 Pull Request！
+欢迎贡献内容和完善教程！
 
-## 📄 License
+### 内容贡献
+- 确保语言通俗易懂，使用生活化比喻
+- 遵循渐进式学习原则
+- 包含完整的代码示例
+- 提供实践项目和练习
 
-MIT License
+### 技术贡献
+- 遵循项目代码规范
+- 确保响应式设计
+- 优化性能和可访问性
+- 添加适当的动画效果
 
-## 👥 致谢
+## 📄 许可证
 
-感谢所有参与开发的贡献者！
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 📞 联系方式
+
+如有问题或建议，欢迎通过以下方式联系：
+- 项目 Issues：提交问题或功能请求
+- 邮件联系：项目维护者邮箱
+
+---
+
+## 💡 项目特色
+
+> **小白友好**：专门为编程新手设计，从零开始，循序渐进
+> 
+> **实战导向**：每个概念都有对应的代码示例和项目实践
+> 
+> **现代技术**：使用最新的前端技术和最佳实践
+> 
+> **精美界面**：响应式设计，丰富的动画效果，优秀的用户体验
 
 ---
 
 <div align="center">
 
-**版本**: 2.0.0  
-**状态**: ✅ 核心完成，功能完善中  
-**访问**: http://localhost:3000  
-**最后更新**: 2026-03-08
+**🚀 让我们一起打造最好的编程学习资源！**
 
 </div>
