@@ -1,116 +1,115 @@
-# 贡献指南
+# Contributing to Woclaw Evolution
 
-感谢你对 Woclaw 项目的关注！我们欢迎任何形式的贡献。
+First off, thanks for taking the time to contribute! ❤️
 
-## 如何贡献
+All types of contributions are encouraged and valued. Please make sure to read this document before making your contribution.
 
-### 报告问题
+## And If You Like the Project, but Just Don't Have Time to Contribute
 
-如果你发现了 bug 或有功能建议，请：
+That's fine, too! There are lots of easy ways to support the project and show your appreciation:
 
-1. 在 [Issues](https://github.com/badhope/Xiaobai/issues) 中搜索是否已有相关问题
-2. 如果没有，创建一个新的 Issue，包含：
-   - 清晰的标题
-   - 详细的问题描述
-   - 复现步骤（如果是 bug）
-   - 预期行为和实际行为
-   - 环境信息（Python 版本、操作系统等）
+- Star the project
+- Tweet about it
+- Refer this project in your project's README
+- Mention the project at local meetups and tell your friends/colleagues
 
-### 提交代码
+## Code of Conduct
 
-1. Fork 本仓库
-2. 创建功能分支：`git checkout -b feature/your-feature`
-3. 进行修改
-4. 运行测试：`pytest`
-5. 运行代码检查：`ruff check .` 和 `black .`
-6. 提交更改：`git commit -m "feat: your feature description"`
-7. 推送分支：`git push origin feature/your-feature`
-8. 创建 Pull Request
+This project and everyone participating in it is governed by the
+[Woclaw Evolution Code of Conduct](CODE_OF_CONDUCT.md).
+By participating, you are expected to uphold this code.
 
-### 代码规范
+## I Want To Contribute
 
-- 使用 [Black](https://github.com/psf/black) 格式化代码
-- 使用 [Ruff](https://github.com/astral-sh/ruff) 进行代码检查
-- 添加类型注解
-- 为新功能编写测试
-- 更新相关文档
+> ### Legal Notice
+> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
 
-### 提交信息规范
+### Reporting Bugs
 
-我们使用 [Conventional Commits](https://www.conventionalcommits.org/) 规范：
+#### Before Submitting a Bug Report
 
-- `feat:` 新功能
-- `fix:` 修复 bug
-- `docs:` 文档更新
-- `style:` 代码格式（不影响功能）
-- `refactor:` 重构
-- `test:` 测试相关
-- `chore:` 构建/工具相关
+A good bug report shouldn't leave others needing to chase you up for more
+information. Therefore, we ask you to investigate carefully, collect
+information and describe the issue in detail in your report.
 
-### 开发环境设置
+#### How Do I Submit a Good Bug Report?
+
+We use GitHub issues to track bugs and errors. If you run into an issue
+with the project:
+
+- Open an [Issue](https://github.com/badhope/Woclaw/issues/new).
+- Explain the behavior you would expect and the actual behavior.
+- Please provide as much context as possible.
+- Provide reproduction steps.
+
+### Suggesting Enhancements
+
+This section guides you through submitting an enhancement suggestion for
+Woclaw Evolution, **including completely new features and minor improvements to
+existing functionality**.
+
+#### How Do I Submit a Good Enhancement Suggestion?
+
+Enhancement suggestions are tracked as [GitHub issues](https://github.com/badhope/Woclaw/issues).
+
+- Use a **clear and descriptive title**
+- Provide a **step-by-step description of the suggested enhancement**
+- **Describe the current behavior** and **explain which behavior you expected to see instead**
+- **Explain why this enhancement would be useful**
+
+### Your First Code Contribution
+
+#### Setting Up the Development Environment
 
 ```bash
-# 克隆仓库
-git clone https://github.com/badhope/Xiaobai.git
-cd Xiaobai
+# Clone the repository
+git clone https://github.com/badhope/Woclaw.git
+cd Woclaw
 
-# 创建虚拟环境
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate  # Windows
+# Install in development mode
+pip install -e ".[dev]"
 
-# 安装开发依赖
-pip install -e ".[dev,all]"
-
-# 安装 Playwright 浏览器
-playwright install
-
-# 运行测试
-pytest
-
-# 代码检查
-ruff check .
-black .
-mypy woclaw
+# Run tests
+python test_evolution.py
 ```
 
-### 添加新工具
+### Pull Request Process
 
-1. 在 `woclaw/tools/` 目录下创建新文件
-2. 继承 `BaseTool` 类
-3. 实现 `execute` 方法
-4. 在 `woclaw/tools/__init__.py` 中注册
-5. 添加测试用例
-6. 更新文档
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
 
-示例：
+## Styleguides
 
-```python
-from woclaw.tools.base import BaseTool
-from typing import Any, ClassVar
+### Commit Messages
 
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
-class MyTool(BaseTool):
-    name: ClassVar[str] = "my_tool"
-    description: ClassVar[str] = "我的工具描述"
-    
-    async def execute(self, action: str, **kwargs) -> Any:
-        handlers = {
-            "action1": self._action1,
-        }
-        handler = handlers.get(action)
-        if not handler:
-            raise ValueError(f"Unknown action: {action}")
-        return await handler(**kwargs)
-    
-    async def _action1(self, **kwargs) -> dict[str, Any]:
-        return {"success": True, "result": "done"}
+```
+<type>(<scope>): <description>
+
+feat(evolution): add new crossover genetic operator
+fix(trueskill): correct bayesian update calculation
+docs(readme): add architecture diagram
+refactor(discovery): clean up solution generation
 ```
 
-## 行为准则
+Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
-请保持友好和尊重。我们致力于为所有人提供包容、友好的环境。
+### Python Code Style
 
-## 许可证
+- Follow PEP 8
+- Use meaningful variable names
+- Write docstrings for public APIs
+- Keep functions focused and concise
 
-通过贡献代码，你同意你的代码将在 MIT 许可证下发布。
+## Join The Project Team
+
+If you're interested in becoming a core contributor, reach out to us!
+
+## Attribution
+
+This guide is based on **contributing.md**. Make your own with [the generator](https://generator.contributing.md)!
