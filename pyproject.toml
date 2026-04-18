@@ -35,8 +35,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: Microsoft :: Windows",
-    "Operating System :: POSIX :: Linux",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -47,82 +46,25 @@ classifiers = [
     "Topic :: Software Development :: Code Generators",
     "Typing :: Typed",
 ]
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-]
 requires-python = ">=3.10"
-
-# ⭐ 核心依赖（必须安装）
 dependencies = [
-    # CLI 框架
     "click>=8.0.0",
     "rich>=13.7.0",
-
-    # 网络请求
     "aiohttp>=3.9.0",
-
-    # 进化算法
     "numpy>=1.24.0",
     "scipy>=1.10.0",
-
-    # 系统监控
-    "psutil>=5.9.0",
-
-    # 图像处理
-    "Pillow>=10.0.0",
+    "pyyaml>=6.0.0",
+    "pydantic>=2.0.0",
 ]
 
-[project.scripts]
-evolution = "woclaw.skills.evolution.scripts.run:main"
-
-# 云端 API 支持（可选）
-dependencies-api = [
-    "openai>=1.0.0",
-    "anthropic>=0.18.0",
-]
-
-# 本地模型支持
-dependencies-local = [
-    # Ollama 无需额外依赖，使用 aiohttp
-]
-
-# 浏览器自动化
-dependencies-browser = [
-    "playwright>=1.40.0",
-]
-
-# 开发依赖
-dependencies-dev = [
-    "pytest>=7.0.0",
-    "pytest-asyncio>=0.21.0",
-    "black>=23.0.0",
-    "ruff>=0.1.0",
-    "mypy>=1.0.0",
-]
-
-# 完整依赖
-dependencies-all = [
-    *dependencies,
-    *dependencies-api,
-    *dependencies-browser,
-]
-
-[project.optional-dependencies]
-api = dependencies-api
-local = dependencies-local
-browser = dependencies-browser
-all = dependencies-all
-dev = dependencies-dev
 [project.scripts]
 evoskill = "evoskill.cli:main"
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.18.0"]
+all = ["openai>=1.0.0", "anthropic>=0.18.0"]
+dev = ["pytest>=7.0.0", "black>=24.0.0", "ruff>=0.3.0"]
 
 [project.urls]
 Homepage = "https://github.com/badhope/EVOSKILL"
@@ -130,36 +72,7 @@ Repository = "https://github.com/badhope/EVOSKILL.git"
 Documentation = "https://github.com/badhope/EVOSKILL/wiki"
 Bug Tracker = "https://github.com/badhope/EVOSKILL/issues"
 Discussions = "https://github.com/badhope/EVOSKILL/discussions"
-Changelog = "https://github.com/badhope/EVOSKILL/releases"
-Research = "https://github.com/badhope/EVOSKILL/wiki/Research"
-Paper = "https://github.com/badhope/EVOSKILL/blob/main/WHITEPAPER.md"
-
-[tool.setuptools]
-packages = ["woclaw", "woclaw.skills", "woclaw.skills.evolution", "woclaw.skills.evolution.modules"]
-package-dir = {"" = "src"}
-Documentation = "https://github.com/badhope/Woclaw#readme"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["woclaw*"]
-
-[tool.setuptools.package-dir]
-"" = "src"
-
-[tool.black]
-line-length = 100
-target-version = ["py310", "py311", "py312"]
-
-[tool.ruff]
-line-length = 100
-select = ["E", "W", "F", "I", "B", "C4", "UP"]
-ignore = ["E501"]
-
-[tool.mypy]
-python_version = "3.10"
-warn_return_any = true
-disallow_untyped_defs = false  # 允许未类型标注
-
-[tool.pytest.ini_options]
-asyncio_mode = "auto"
-testpaths = ["tests"]
+include = ["evoskill*"]
